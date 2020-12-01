@@ -4,6 +4,8 @@ html {
     min-height: 100%;
     margin: auto;
     overflow: scroll;
+    scroll-behavior: smooth;
+
 }
 
 body {
@@ -18,6 +20,10 @@ body {
   color:#7E3601;
 }
 
+a href:focus {
+  margin: 10px;
+}
+
 /* The sidebar menu */
 .icon img{
   position: relative;
@@ -28,19 +34,18 @@ body {
 }
 
  nav.side-nav {
-   background-color: #ffff;
-  /*background-color: #F5D157 ; /* Black */
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 215px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0px; /* Stay at the top */
+  background-color: #ffff;
+  height: 100%;
+  width: 215px;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
   left: 0px;
   padding-top: 25px;
-  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-x: hidden;
 }
 
-/* The navigation menu links #7B8E04*/
+/* The navigation menu */
 
 .menu-portfolio #portfolio{
   color: #EC4F00;
@@ -54,9 +59,29 @@ body {
   color: #EC4F00;
 }
 
+.side-nav li {
+  padding: 12px 10px 15px 18px;
+  text-decoration: none;
+  font-size: 23px;
+  color: #B34604;
+  display: block;
+  width: 100px;
+}
+
+a{
+  text-decoration: none;
+}
+
+nav.side-nav li:hover {
+  // text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Portfolio */
+
 #gingko{
   position: relative;
-  top: 70px;
+  top: 110px;
   width: 160px;
   height: 160px;
   animation-name: move-gingko;
@@ -80,6 +105,7 @@ body {
   justify-content: center;
   position: relative;
   left: 25px;
+
 }
 
 .mini-bio-text {
@@ -89,7 +115,7 @@ body {
 
 #name{
   position: relative;
-  top: 70px;
+  top: 120px;
   animation-name: move-bio-name;
   animation-duration: 2s;
   animation-fill-mode: forwards;
@@ -98,7 +124,7 @@ body {
 
 #description{
   position: relative;
-  top:65px;
+  top:105px;
   animation-name: move-bio-description;
   animation-delay: .5s;
   animation-duration: 2s;
@@ -108,53 +134,313 @@ body {
 
 @keyframes move-bio-name {
   from {
-    top: 90px;
+    top: 150px;
   }
   to {
-    top: 70px;
+    top: 120px;
     opacity: 1;
   }
 }
 
 @keyframes move-bio-description {
   from {
-    top: 95px;
+    top: 135px;
   }
   to {
-    top: 65px;
+    top: 105px;
     opacity: 1;
   }
 }
 
+.view-work {
+  font-size: 40px;
+  position: relative;
+  top: 230px;
+  left:48px;
+  display: flex;
+  justify-content: center;
+  animation-name: arrow-fadein;
+  animation-duration: 1s;
+  animation-delay: 2.3s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
 
-.side-nav li {
-  padding: 12px 10px 15px 18px;
-  text-decoration: none;
-  font-size: 23px;
-  color: #B34604;
+@keyframes arrow-fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* the bounce animation was sourced from Elvis Sedić at https://jsfiddle.net/esedic/rLdv29ou/ */
+
+@-webkit-keyframes bounce {
+    15% {
+        -webkit-transform: translateY(5px);
+        transform: translateY(5px);
+    }
+    30% {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+    50% {
+        -webkit-transform: translateY(3px);
+        transform: translateY(3px);
+    }
+    65% {
+        -webkit-transform: translateY(-3px);
+        transform: translateY(-3px);
+    }
+    80% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+@keyframes bounce {
+    15% {
+        -webkit-transform: translateY(5px);
+        transform: translateY(5px);
+    }
+    30% {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+    50% {
+        -webkit-transform: translateY(3px);
+        transform: translateY(3px);
+    }
+    65% {
+        -webkit-transform: translateY(-3px);
+        transform: translateY(-3px);
+    }
+    80% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+.view-work p:hover
+{
+    -webkit-animation: bounce 1s ease;
+    animation: bounce 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+a href{
   display: block;
 }
 
-a{
-  text-decoration: none;
+#section1{
+  height: 650px;
 }
 
-nav.side-nav li:hover {
-  // text-decoration: underline;
-  font-weight: bold;
+#section2{
+  height: 800px;
+  width: 1120px;
 }
 
-/* Portfolio */
+.project-container{
+  display: flex;
+  flex: 0 0 100%;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+
+.project{
+  position: relative;
+  margin: 25px;
+}
+
+#project1, #project2, #project3{
+  height: 350px;
+  width: 505px;
+  border-radius: 20px;
+}
+
+/*adapted from example at https://www.w3schools.com/howto/howto_css_image_overlay_slide.asp */
+
+.project img{
+  flex: 1;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: black;
+  opacity: .6;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+
+.project:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Project 1: Music Player Concept */
+
+.image-reel1{
+  display:inline-block;
+  margin: 10px;
+
+}
+
+.image-reel1 img, iframe{
+  height: 500px;
+  width: 700px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+
+.description{
+  background-color: #ffff;
+  height: 100%;
+  width: 353px;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 1000px;
+  padding-top: 25px;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+#text-body{
+  text-align: left;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+/* Project 2: Bookselves Wireframe Prototype */
+
+.image-reel2{
+  display:inline-block;
+  margin:10px;
+}
+
+#bookselves-intro-image{
+  position:relative;
+  height: 400px;
+  width: 600px;
+}
+
+.image-reel2 img{
+  height: 600px;
+  width: 600px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.bookselves-description{
+  background-color: #ffff;
+  height: 100%;
+  width: 495px;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 905px;
+  padding-top: 18px;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.bookselves-description ol, .exChange-description ol{
+  text-align: left;
+}
+
+.bookselves-description a{
+  color: #EC4F00;
+}
+
+.bookselves-description a:hover{
+  text-decoration: underline;
+}
+
+/* Project 3: ExChange */
+
+.image-reel3{
+  height: 600px;
+  width: 600px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+#exChange-slides{
+  position:relative;
+  height: 500px;
+  width: 600px;
+}
+
+.google-slides {
+  position: relative;
+  height: 100%
+  overflow: hidden;
+  padding-top: 75%;
+}
+
+.google-slides iframe {
+  border: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.exChange-description{
+  background-color: #ffff;
+  height: 100%;
+  width: 479px;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 908px;
+  padding-top: 18px;
+  overflow-x: hidden;
+  text-align: center;
+}
 
 /* About*/
+
 .profile_pic img{
   width: 450px;
   height: 450px;
   padding: 10px;
   position: relative;
   right: 30px;
-  animation-name: pic;
-  animation-duration: 3s;
 }
 
 .profile_pic {
@@ -173,7 +459,7 @@ nav.side-nav li:hover {
   display: flex;
   justify-content: center;
   position: relative;
-  left: 100px;
+  left: 60px;
   top: 70px;
   color:#7E3601;
 }
@@ -189,35 +475,14 @@ nav.side-nav li:hover {
   top: 100px;
   left: 425px;
 }
-/*
-.resume {
-	background-color:#44c767;
-	border-radius:28px;
-	border:1px solid #44c767;
-	display: inline-block;
-	cursor: pointer;
-	color: #ffffff;
-	font-size: 17px;
-	padding: 16px 31px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #2f6627;
-}
-.resume:hover {
-	background-color: #06850D;
-}
-.resume:active {
-	position:relative;
-	top: 1px;
-}
-*/
 
-/* modified buttons based on an example from https://www.w3schools.com/css/css3_buttons.asp*/
+
+/* buttons based on an example from https://www.w3schools.com/css/css3_buttons.asp*/
 .resume, input[type=submit] {
   position: relative;
   background-color: #ffff;
   border: 1px solid #EC4F00;
   border-radius: 25px;
-  /*color:#7E3601; #EC4F00 #B34604*/
   color: #EC4F00;
   font-size: 17px;
   padding: 13px;
@@ -278,8 +543,8 @@ nav.side-nav li:hover {
   right: 0;
 }
 
-
 /* Contact*/
+
 #send-email {
   color: #EC4F00;
 }
@@ -290,7 +555,7 @@ text-decoration: underline;
 
 .contact-intro{
   text-align: center;
-  line-height: 30px;
+  line-height: 25px;
   font-size: 17px;
   padding: 10px 0;
 }
@@ -302,7 +567,7 @@ text-decoration: underline;
   font-size: 17px;
 }
 
-.contact-form textarea, input{
+.contact-form input[type="text"], .contact-form input[type="email"], #message{
   display: inline-block;
   height: 40px;
   width: 900px;
@@ -312,11 +577,12 @@ text-decoration: underline;
   border-radius: 4px;
   font-family: "Lato", sans-serif;
   font-size: 17px;
+  line-height: 25 px;
   overflow: hidden;
   resize: none;
 }
 
-.contact-form textarea:focus{
+.contact-form input[type="text"]:focus, .contact-form input[type="email"]:focus, #message:focus{
   background-color: white;
 }
 
@@ -324,7 +590,7 @@ text-decoration: underline;
   font-size: 14px;
 }
 
-.name-form textarea{
+.name-form textarea, .name-form input[type="text"]{
   display: inline-block;
   height: 40px;
   width: 420px;
@@ -348,4 +614,30 @@ text-decoration: underline;
   height: 150px;
   overflow: auto;
   resize: vertical;
+}
+
+
+/* Thank You */
+
+.thankyou_message{
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+}
+
+#thanks_gif{
+  position: relative;
+  left: 170px;
+  width: 680px;
+  height: 370px;
+  border-radius: 300px;
+  animation-name: thanks_gif;
+  animation-duration: 4s;
+  animation-fill-mode: fowards;
+}
+
+
+@keyframes thanks_gif {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }

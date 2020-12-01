@@ -1,6 +1,43 @@
-<!DOCTYPE html>
-<title>Thank You</title>
+<html>
+    <head>
+        <title>Thank You</title>
+        <link rel="stylesheet" type="text/css" href="portfolio.css"/>
+    </head>
 
-<h1>Thanks for your feedback!</h1>
-<p>We appreciate that you took the time to send us feedback. Your feedback has been sent to the webmaster.</p>
-<p><a href="feedback_form.html">Back to feedback form</a>.</p>
+    <body>
+      <!-- Side Menu Bar: navigation between portfolio, about, and contact pages-->
+      <nav class="side-nav">
+        <div class="icon">
+          <img src="images/ft_icon.jpg" alt="FT logo">
+        </div>
+        <ul class= "menu-portfolio">
+          <a href="portfolio.html">
+            <li id ="portfolio" aria-labelledby="Portfolio">Portfolio</li>
+          </a>
+          <a href="about.html">
+            <li id ="about" aria-labelledby="About">About</li>
+         </a>
+         <a href="contact.html">
+            <li id="contact" aria-labelledby="Contact">Contact</li>
+         </a>
+        </ul>
+      </nav>
+
+      <div id ="screen">
+        <!-- Thank you message and gif-->
+        <img id="thanks_gif" src="images/thank_you.gif" alt="Fionna Teoh">
+        <div class="thankyou_message">
+          <p>Thank you for sending a message!<br></p>
+        </div>
+        <!-- Email Contact info: clickable link to open email to Fionna Teoh-->
+        <div class="contact-intro">
+          <br><br><hr><br>
+          <p>For questions or inquiries, feel free to send me an email at<br></p>
+          <a href="mailto:fionnateoh2022@u.northwestern.edu"
+            <p id="send-email">fionnateoh2022@u.northwestern.edu</p>
+          </a>
+        </div>
+      </div>
+
+    </body>
+ </html>
