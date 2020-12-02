@@ -1,5 +1,7 @@
 # fionnateoh
 
+This website was designed for Google Chrome.
+
 Please leave a message through my contact form to see a page redirect.
 
 
